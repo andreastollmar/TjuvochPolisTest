@@ -10,6 +10,7 @@
             Console.WriteLine("Ännu ett test");
             Console.WriteLine("...............");
             Console.WriteLine("HEj hej hur mår ni");
+            Console.WriteLine("hello");
         }
     }
 }
