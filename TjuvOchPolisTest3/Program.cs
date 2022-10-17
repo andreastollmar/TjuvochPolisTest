@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hej hej hej hej grupp 1");
+            Console.WriteLine("Hur mår ni boiiiiiiis");
         }
     }
 }
