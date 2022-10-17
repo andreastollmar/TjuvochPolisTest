@@ -8,6 +8,7 @@
             Console.WriteLine("Hur mår ni boiiiiiiis");
             Console.WriteLine("Hur går det för dig Mohammad, har du hittat in ännu?");
             Console.WriteLine("Ännu ett test");
+            Console.WriteLine("...............");
         }
     }
 }
