@@ -9,6 +9,7 @@
             Console.WriteLine("Hur går det för dig Mohammad, har du hittat in ännu?");
             Console.WriteLine("Ännu ett test");
             Console.WriteLine("...............");
+            Console.WriteLine("HEj hej hur mår ni");
         }
     }
 }
