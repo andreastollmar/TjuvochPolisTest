@@ -11,21 +11,21 @@ namespace TjuvOchPolisTest3
         public int MovementY { get; set; }
         public int MovementX { get; set; }
         public int PlacementY { get; set; }
-        public int PlacementX { get; set; }
-        public List<string> Inventory { get; set; }
+        public int PlacementX { get; set; }        
         public string Name { get; set; }
 
     }
 
 
     internal class Robber : Person
-    { 
-        //Add more code
+    {
+        public List<string> Loot { get; set; }
+        public bool Thief { get; set; }
     }
 
     internal class Citizen : Person
     {
-        //add more code
+        public List<string> Belongings { get; set; }
     }
 
 
