@@ -13,6 +13,9 @@
             //Console.WriteLine("hello");
             Robber robber = new Robber();
             Console.WriteLine(robber.PlacementY);
+
+            City city = new City();
+            city.Start();
         }
     }
 }

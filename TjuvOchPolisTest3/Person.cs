@@ -19,8 +19,8 @@ namespace TjuvOchPolisTest3
             Random rnd = new Random();            
             MovementY = rnd.Next(-1, 2);
             MovementX = rnd.Next(-1, 2);
-            PlacementY = rnd.Next(0, 24);
-            PlacementX = rnd.Next(0, 99);
+            PlacementY = rnd.Next(0, 99);
+            PlacementX = rnd.Next(0, 24);
         }
     }
 
