@@ -34,14 +34,22 @@ namespace TjuvOchPolisTest3
         {
             Name = "R";
             Thief = false;
-            List<String> loot = new List<string>();
+            Loot = new List<string>();
         }
     }
 
     internal class Citizen : Person
     {
         public List<string> Belongings { get; set; }
+
+        public Citizen(): base()
+        {
+            Name = "C";
+            Belongings = new List<string>();
+
+        }
     }
+    
 
 
     internal class Police : Person
