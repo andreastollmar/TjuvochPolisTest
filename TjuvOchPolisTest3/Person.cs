@@ -54,6 +54,12 @@ namespace TjuvOchPolisTest3
 
     internal class Police : Person
     {
-        //Add more code and Constructors
+        public List<string> StolenGoods { get; set; }
+
+        public Police(): base()
+        {
+            Name = "P"
+            StolenGoods = new List<string>();
+        }
     }
 }
