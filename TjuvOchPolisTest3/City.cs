@@ -12,6 +12,9 @@ namespace TjuvOchPolisTest3
         public static List<Robber> robbers = new List<Robber>();
         public static List<Citizen> citizens = new List<Citizen>();
         public static List<Police> polices = new List<Police>();
+        Stuff stuff = new Stuff();
+        Person person = new Person();
+        public static List<Person> persons = new List<Person>();
 
 
         public void Start()
@@ -20,31 +23,38 @@ namespace TjuvOchPolisTest3
 
             while (true)
             {
-                foreach (Citizen citizen in citizens)
+                foreach (Person persons in persons)
                 {
-                    city[citizen.PlacementX, citizen.PlacementY] = citizen.Name;
-                    citizen.Movement();
-                }
-
-                foreach (Robber robber in robbers)
-                {
-                    if (city[robber.PlacementX, robber.PlacementY] == "C")
+                    city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                    persons.Movement();
+                    if (persons is Police)
                     {
-                        //Metod för att stjäla items
-                        Console.WriteLine("Här står en tjuv/citisen");
+                        if (city[((Police)persons).PlacementX, ((Police)persons).PlacementY] == "R")
+                        {
+                            Console.WriteLine("Tjuv blev arresterad");
+                        }
+                       
                     }
-                    else
-                    {
-                        city[robber.PlacementX, robber.PlacementY] = robber.Name;
-                    }                    
-                    robber.Movement();
                 }
 
-                foreach (Police police in polices)
-                {
-                    city[police.PlacementX, police.PlacementY] = police.Name;
-                    police.Movement();
-                }
+                //foreach (Robber robber in robbers)
+                //{
+                //    if (city[robber.PlacementX, robber.PlacementY] == "C")
+                //    {
+                //        stuff.StealItem()
+                //    }
+                //    else
+                //    {
+                //        city[robber.PlacementX, robber.PlacementY] = robber.Name;
+                //    }                    
+                //    robber.Movement();
+                //}
+
+                //foreach (Police police in polices)
+                //{
+                //    city[police.PlacementX, police.PlacementY] = police.Name;
+                //    police.Movement();
+                //}
 
                 for (int i = 0; i < city.GetLength(0); i++)
                 {
@@ -67,7 +77,7 @@ namespace TjuvOchPolisTest3
                 {
                     for (int j = 0; j < city.GetLength(1); j++)
                     {
-                        city[i,j] = null;                                              
+                        city[i,j] = " ";                                              
                     }                   
                 }
 
@@ -92,7 +102,10 @@ namespace TjuvOchPolisTest3
             {
                 Robber robber = new Robber();
                 robbers.Add(robber);
-            }
+            }            
+            persons.AddRange(citizens);
+            persons.AddRange(robbers);
+            persons.AddRange(polices);
         }
     }
 }

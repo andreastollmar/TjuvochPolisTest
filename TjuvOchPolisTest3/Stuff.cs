@@ -27,6 +27,7 @@ namespace TjuvOchPolisTest3
         {
             retaken.AddRange(stolen);
             stolen.Clear();
+            arrested++;
         }
 
     }
