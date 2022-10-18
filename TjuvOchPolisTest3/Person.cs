@@ -14,6 +14,15 @@ namespace TjuvOchPolisTest3
         public int PlacementX { get; set; }        
         public string Name { get; set; }
 
+        public Person(string name)
+        {
+            Random rnd = new Random();
+            Name = name;
+            MovementY = rnd.Next(-1, 2);
+            MovementX = rnd.Next(-1, 2);
+            PlacementY = rnd.Next(0, 24);
+            PlacementX = rnd.Next(0, 99);
+        }
     }
 
 
