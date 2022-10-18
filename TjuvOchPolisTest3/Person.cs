@@ -27,7 +27,8 @@ namespace TjuvOchPolisTest3
         {
             PlacementX = MovementCheckX();
             PlacementY = MovementCheckY();
-        }
+        }        
+        
         public int MovementCheckX()
         {
             int placementX = PlacementX += MovementX;
@@ -67,6 +68,7 @@ namespace TjuvOchPolisTest3
             Name = "R";
             Thief = false;
             Loot = new List<string>();
+            Loot.Add("Fiskar");
         }
     }
 

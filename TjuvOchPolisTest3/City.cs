@@ -25,16 +25,45 @@ namespace TjuvOchPolisTest3
             {
                 foreach (Person persons in persons)
                 {
-                    city[persons.PlacementX, persons.PlacementY] = persons.Name;
                     persons.Movement();
+                    //city[persons.PlacementX, persons.PlacementY] = persons.Name;
+
+
+
+
+
+                    if (persons is Citizen)
+                    {
+                        city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                    }
+                    if (persons is Robber)
+                    {
+                        city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                    }
                     if (persons is Police)
                     {
-                        if (city[((Police)persons).PlacementX, ((Police)persons).PlacementY] == "R")
+                        if (city[(((Police)persons).PlacementX), (((Police)persons).PlacementY)] == "R")
                         {
-                            Console.WriteLine("Tjuv blev arresterad");
+                            foreach (Robber robber in robbers)
+                            {
+                                if (robber.PlacementX == (((Police)persons).PlacementX) && robber.PlacementY == (((Police)persons).PlacementY))
+                                {
+                                    stuff.TakeAllItems(robber.Loot, (((Police)persons).StolenGoods));
+                                }
+                            }                
+                            
+                            city[(((Police)persons).PlacementX), (((Police)persons).PlacementY)] = "[x]";
+
+
+                            Console.WriteLine("Tjuv blev arresterad");                            
                         }
-                       
+                        else
+                        {
+                            city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                        }
                     }
+
+
                 }
 
                 //foreach (Robber robber in robbers)
@@ -70,6 +99,13 @@ namespace TjuvOchPolisTest3
                         }
                     }
                     Console.WriteLine();
+                }
+                foreach (Police polis in polices)
+                {
+                    if (polis.StolenGoods.Count > 0)
+                    {
+                        Console.WriteLine(polis.StolenGoods[0]);
+                    }
                 }
                 Console.ReadKey();
                 Console.Clear();
