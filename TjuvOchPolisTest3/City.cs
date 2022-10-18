@@ -48,11 +48,15 @@ namespace TjuvOchPolisTest3
 
 
                             Console.WriteLine("Citizen was robbed!");
+
+                            
                         }
                         else
                         {
                             city[persons.PlacementX, persons.PlacementY] = persons.Name;
                         }
+
+                       
                     }
                     if (persons is Police)
                     {
