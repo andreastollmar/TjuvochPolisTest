@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TjuvOchPolisTest3
+﻿namespace TjuvOchPolisTest3
 {
     internal class Stuff
     {
@@ -14,14 +8,17 @@ namespace TjuvOchPolisTest3
 
 
 
-        public void StealItem(List<string> belongnings, List<string>stolen)
+        public void StealItem(List<string> belongings, List<string>stolen)
         {
             Random rnd = new Random();
-            int steal = rnd.Next(0, (belongnings.Count));
-            string taken = belongnings[steal];
-            stolen.Add(taken);
-            belongnings.RemoveAt(steal);
-            robbed++;            
+            if (belongings.Count != 0)
+            {
+                int steal = rnd.Next(0, (belongings.Count));
+                string taken = belongings[steal];
+                stolen.Add(taken);
+                belongings.RemoveAt(steal);
+                robbed++;
+            }
         }
         public void TakeAllItems(List<string> stolen, List<string> retaken)
         {
