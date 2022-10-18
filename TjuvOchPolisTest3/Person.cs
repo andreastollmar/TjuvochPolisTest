@@ -8,7 +8,12 @@ namespace TjuvOchPolisTest3
 {
     internal class Person
     {
-        //Add properties that apply to all subclasses
+        public int MovementY { get; set; }
+        public int MovementX { get; set; }
+        public int PlacementY { get; set; }
+        public int PlacementX { get; set; }
+        public List<string> Inventory { get; set; }
+        public string Name { get; set; }
 
     }
 
