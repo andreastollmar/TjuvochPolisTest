@@ -28,7 +28,15 @@ namespace TjuvOchPolisTest3
 
                 foreach (Robber robber in robbers)
                 {
-                    city[robber.PlacementX, robber.PlacementY] = robber.Name;
+                    if (city[robber.PlacementX, robber.PlacementY] == "C")
+                    {
+                        //Metod för att stjäla items
+                        Console.WriteLine("Här står en tjuv/citisen");
+                    }
+                    else
+                    {
+                        city[robber.PlacementX, robber.PlacementY] = robber.Name;
+                    }                    
                     robber.Movement();
                 }
 
@@ -59,7 +67,7 @@ namespace TjuvOchPolisTest3
                 {
                     for (int j = 0; j < city.GetLength(1); j++)
                     {
-                        city[i,j] = " ";                                              
+                        city[i,j] = null;                                              
                     }                   
                 }
 
