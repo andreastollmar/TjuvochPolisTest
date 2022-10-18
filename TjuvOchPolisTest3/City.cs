@@ -47,7 +47,7 @@ namespace TjuvOchPolisTest3
                             city[(((Robber)persons).PlacementX), (((Robber)persons).PlacementY)] = "[y]";
 
 
-                            Console.WriteLine("Medborgare blev rånad");
+                            Console.WriteLine("Citizen was robbed!");
                         }
                         else
                         {
@@ -62,14 +62,23 @@ namespace TjuvOchPolisTest3
                             {
                                 if (robber.PlacementX == (((Police)persons).PlacementX) && robber.PlacementY == (((Police)persons).PlacementY))
                                 {
-                                    stuff.TakeAllItems(robber.Loot, (((Police)persons).StolenGoods));
+                                    if (robber.Thief == true)
+                                    {
+                                        stuff.TakeAllItems(robber.Loot, (((Police)persons).StolenGoods));
+
+                                        city[(((Police)persons).PlacementX), (((Police)persons).PlacementY)] = "[x]";
+
+                                        Console.WriteLine("Thief Was Arrested");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Polis bumped in to thief with no possesions");
+                                    }
+                                    
                                 }
                             }                
                             
-                            city[(((Police)persons).PlacementX), (((Police)persons).PlacementY)] = "[x]";
-
-
-                            Console.WriteLine("Tjuv blev arresterad");                            
+                                                        
                         }
                         else
                         {
@@ -132,6 +141,8 @@ namespace TjuvOchPolisTest3
                 //        }
                 //    }
                 //}
+                Console.WriteLine("Citizen Robbed: " + stuff.robbed);
+                Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
                 Console.ReadKey();
                 Console.Clear();
                 for (int i = 0; i < city.GetLength(0); i++)

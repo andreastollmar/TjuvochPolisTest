@@ -3,8 +3,8 @@
     internal class Stuff
     {
         public string[] stuff = { "Money", "Keys", "Cellphone", "Watch" };
-        static int robbed = 0;
-        static int arrested = 0;
+        public int robbed = 0;
+        public int arrested = 0;
 
 
 
