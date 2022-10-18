@@ -11,21 +11,30 @@ namespace TjuvOchPolisTest3
         public int MovementY { get; set; }
         public int MovementX { get; set; }
         public int PlacementY { get; set; }
-        public int PlacementX { get; set; }
-        public List<string> Inventory { get; set; }
+        public int PlacementX { get; set; }        
         public string Name { get; set; }
 
+        public Person(string name)
+        {
+            Random rnd = new Random();
+            Name = name;
+            MovementY = rnd.Next(-1, 2);
+            MovementX = rnd.Next(-1, 2);
+            PlacementY = rnd.Next(0, 24);
+            PlacementX = rnd.Next(0, 99);
+        }
     }
 
 
     internal class Robber : Person
-    { 
-        //Add more code
+    {
+        public List<string> Loot { get; set; }
+        public bool Thief { get; set; }
     }
 
     internal class Citizen : Person
     {
-        //add more code
+        public List<string> Belongings { get; set; }
     }
 
 
