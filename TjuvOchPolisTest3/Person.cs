@@ -68,7 +68,6 @@ namespace TjuvOchPolisTest3
             Name = "R";
             Thief = false;
             Loot = new List<string>();
-            Loot.Add("Fiskar");
         }
     }
 

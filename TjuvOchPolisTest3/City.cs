@@ -119,13 +119,42 @@ namespace TjuvOchPolisTest3
                     }
                     Console.WriteLine();
                 }
-                foreach (Police polis in polices)
-                {
-                    if (polis.StolenGoods.Count > 0)
-                    {
-                        Console.WriteLine(polis.StolenGoods[0]);
-                    }
-                }
+                //Console.WriteLine("Police: ");
+                //foreach (Police polis in polices)
+                //{
+
+                //    if (polis.StolenGoods.Count > 0)
+                //    {
+                //        for (int i = 0; i < polis.StolenGoods.Count; i++)
+                //        {
+                //            Console.WriteLine(polis.StolenGoods[i]);
+                //        }
+                //    }
+                //}
+                //Console.WriteLine("Robbers: ");
+                //foreach (Robber robber in robbers)
+                //{
+
+                //    if (robber.Loot.Count > 0)
+                //    {
+                //        for (int i = 0; i < robber.Loot.Count; i++)
+                //        {
+                //            Console.WriteLine(robber.Loot[i]);
+                //        }
+                //    }
+                //}
+                //Console.WriteLine("Citizens: ");
+                //foreach (Citizen citizen in citizens)
+                //{
+
+                //    if (citizen.Belongings.Count > 0)
+                //    {
+                //        for (int i = 0; i < citizen.Belongings.Count; i++)
+                //        {
+                //            Console.WriteLine(citizen.Belongings[i]);
+                //        }
+                //    }
+                //}
                 Console.ReadKey();
                 Console.Clear();
                 for (int i = 0; i < city.GetLength(0); i++)
