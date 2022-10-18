@@ -26,11 +26,6 @@ namespace TjuvOchPolisTest3
                 foreach (Person persons in persons)
                 {
                     persons.Movement();
-                    //city[persons.PlacementX, persons.PlacementY] = persons.Name;
-
-
-
-
 
                     if (persons is Citizen)
                     {
@@ -84,25 +79,7 @@ namespace TjuvOchPolisTest3
 
 
                 }
-
-                //foreach (Robber robber in robbers)
-                //{
-                //    if (city[robber.PlacementX, robber.PlacementY] == "C")
-                //    {
-                //        stuff.StealItem()
-                //    }
-                //    else
-                //    {
-                //        city[robber.PlacementX, robber.PlacementY] = robber.Name;
-                //    }                    
-                //    robber.Movement();
-                //}
-
-                //foreach (Police police in polices)
-                //{
-                //    city[police.PlacementX, police.PlacementY] = police.Name;
-                //    police.Movement();
-                //}
+               
 
                 for (int i = 0; i < city.GetLength(0); i++)
                 {
