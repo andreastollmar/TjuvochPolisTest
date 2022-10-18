@@ -44,8 +44,10 @@ namespace TjuvOchPolisTest3
 
         public Citizen(): base()
         {
+            Stuff stuff = new Stuff();
             Name = "C";
             Belongings = new List<string>();
+            Belongings.AddRange(stuff.stuff);
 
         }
     }
@@ -58,7 +60,7 @@ namespace TjuvOchPolisTest3
 
         public Police(): base()
         {
-            Name = "P"
+            Name = "P";
             StolenGoods = new List<string>();
         }
     }
