@@ -14,10 +14,9 @@ namespace TjuvOchPolisTest3
         public int PlacementX { get; set; }        
         public string Name { get; set; }
 
-        public Person(string name)
+        public Person()
         {
-            Random rnd = new Random();
-            Name = name;
+            Random rnd = new Random();            
             MovementY = rnd.Next(-1, 2);
             MovementX = rnd.Next(-1, 2);
             PlacementY = rnd.Next(0, 24);
@@ -30,6 +29,13 @@ namespace TjuvOchPolisTest3
     {
         public List<string> Loot { get; set; }
         public bool Thief { get; set; }
+
+        public Robber() : base()
+        {
+            Name = "R";
+            Thief = false;
+            List<String> loot = new List<string>();
+        }
     }
 
     internal class Citizen : Person
