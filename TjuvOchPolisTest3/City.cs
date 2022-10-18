@@ -18,38 +18,47 @@ namespace TjuvOchPolisTest3
         {
             List();
 
-    
-            foreach (Citizen citizen in citizens)
+            while (true)
             {
-                city[citizen.PlacementX, citizen.PlacementY] = citizen.Name;
-
-            }
-
-            foreach (Robber robber in robbers)
-            {
-                city[robber.PlacementX, robber.PlacementY] = robber.Name;
-            }
-
-            foreach (Police police in polices)
-            {
-                city[police.PlacementX, police.PlacementY] = police.Name;
-            }
-
-            for (int i = 0; i < city.GetLength(0); i++)
-            {
-                for (int j = 0; j < city.GetLength(1); j++)
+                foreach (Citizen citizen in citizens)
                 {
-                    if (city[i, j] != null)
-                    {
-                        Console.Write(city[i, j]);
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
+                    city[citizen.PlacementX, citizen.PlacementY] = citizen.Name;
+                    citizen.Movement();
                 }
-                Console.WriteLine();
+
+                foreach (Robber robber in robbers)
+                {
+                    city[robber.PlacementX, robber.PlacementY] = robber.Name;
+                    robber.Movement();
+                }
+
+                foreach (Police police in polices)
+                {
+                    city[police.PlacementX, police.PlacementY] = police.Name;
+                    police.Movement();
+                }
+
+                for (int i = 0; i < city.GetLength(0); i++)
+                {
+                    for (int j = 0; j < city.GetLength(1); j++)
+                    {
+                        if (city[i, j] != null)
+                        {
+                            Console.Write(city[i, j]);
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                Console.ReadKey();
+                Console.Clear();
+                
+
             }
+            
         }
 
         public static void List()

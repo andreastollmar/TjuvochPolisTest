@@ -22,6 +22,38 @@ namespace TjuvOchPolisTest3
             PlacementY = rnd.Next(0, 99);
             PlacementX = rnd.Next(0, 24);
         }
+
+        public void Movement()
+        {
+            PlacementX = MovementCheckX();
+            PlacementY = MovementCheckY();
+        }
+        public int MovementCheckX()
+        {
+            int placementX = PlacementX += MovementX;
+            if (placementX < 0)
+            {
+                placementX = 24;
+            }
+            else if (placementX > 24)
+            {
+                placementX = 0;
+            }
+            return placementX;
+        }
+        public int MovementCheckY()
+        {
+            int placementY = PlacementY += MovementY;
+            if (placementY < 0)
+            {
+                placementY = 99;
+            }
+            else if (placementY > 99)
+            {
+                placementY = 0;
+            }
+            return placementY;
+        }
     }
 
 
