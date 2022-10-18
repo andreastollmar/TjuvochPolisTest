@@ -55,7 +55,14 @@ namespace TjuvOchPolisTest3
                 }
                 Console.ReadKey();
                 Console.Clear();
-                
+                for (int i = 0; i < city.GetLength(0); i++)
+                {
+                    for (int j = 0; j < city.GetLength(1); j++)
+                    {
+                        city[i,j] = " ";                                              
+                    }                   
+                }
+
 
             }
             
