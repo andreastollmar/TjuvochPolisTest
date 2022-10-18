@@ -38,7 +38,26 @@ namespace TjuvOchPolisTest3
                     }
                     if (persons is Robber)
                     {
-                        city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                        if (city[(((Robber)persons).PlacementX), (((Robber)persons).PlacementY)] == "C")
+                        {
+                            foreach (Citizen citizen in citizens)
+                            {
+                                if (citizen.PlacementX == (((Robber)persons).PlacementX) && citizen.PlacementY == (((Robber)persons).PlacementY))
+                                {
+                                    stuff.StealItem(citizen.Belongings, (((Robber)persons).Loot));
+                                    (((Robber)persons).Thief) = true;  
+                                }
+                            }
+
+                            city[(((Robber)persons).PlacementX), (((Robber)persons).PlacementY)] = "[y]";
+
+
+                            Console.WriteLine("Medborgare blev rånad");
+                        }
+                        else
+                        {
+                            city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                        }
                     }
                     if (persons is Police)
                     {
