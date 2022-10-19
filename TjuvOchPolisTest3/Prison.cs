@@ -11,6 +11,7 @@ namespace TjuvOchPolisTest3
     {
         public List<Person> prisoners = new List<Person>();
         public string[,] prison = new string[11, 11];
+        Helper helper = new Helper();
         
 
         public void ListPrisoners()
@@ -21,7 +22,7 @@ namespace TjuvOchPolisTest3
 
         }
 
-        public void StarPrison()
+        public void StartPrison()
         {
             //code to add all prisoners to the prison matris
             foreach (Person prisoner in prisoners)
@@ -55,13 +56,8 @@ namespace TjuvOchPolisTest3
                 }
                 Console.WriteLine();
             }
-            for (int i = 0; i < prison.GetLength(0); i++)
-            {
-                for (int j = 0; j < prison.GetLength(1); j++)
-                {
-                    prison[i, j] = " ";
-                }
-            }
+            //metod to clear matris
+            helper.ClearArray(prison);            
 
         }
 

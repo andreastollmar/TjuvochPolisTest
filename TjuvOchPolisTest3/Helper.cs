@@ -8,7 +8,7 @@ namespace TjuvOchPolisTest3
 {
     internal class Helper
     {
-
+        //Print array method
         public void PrintArray(string[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -27,7 +27,7 @@ namespace TjuvOchPolisTest3
                 Console.WriteLine();
             }
         }
-
+        //clear array method
         public void ClearArray(string[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)

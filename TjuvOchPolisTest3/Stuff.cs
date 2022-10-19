@@ -7,7 +7,7 @@
         public int arrested = 0;
 
 
-
+        //Metod to steal random item from list citizen to robber
         public void StealItem(List<string> belongings, List<string>stolen)
         {
             Random rnd = new Random();
@@ -20,6 +20,7 @@
                 robbed++;
             }
         }
+        //Metod to take all items from robber to polis inventory
         public void TakeAllItems(List<string> stolen, List<string> retaken)
         {
             retaken.AddRange(stolen);

@@ -22,7 +22,7 @@ namespace TjuvOchPolisTest3
         public void Start()
         {
             List();
-
+            //Long metod to print members into matris city and handle collisions
             while (true)
             {
                 for(int i = 0; i < persons.Count; i++)
@@ -80,32 +80,31 @@ namespace TjuvOchPolisTest3
                                         prison.prisoners.Add(robbers[j]);
                                         robbers.Remove(robbers[j]);
                                         persons.Remove(robbers[j]);
-                                    }
-
-                                    
+                                    }                                   
                                 }
-                            }                
-                            
-                                                        
+                            }                           
                         }
                         else
                         {
                             city[persons[i].PlacementX, persons[i].PlacementY] = persons[i].Name;
                         }
                     }
-
-
                 }
-               
-                helper.PrintArray(city);
 
+                //Method to print array               
+                helper.PrintArray(city);
                 
+
+                //Printing data in bottom of matris
                 Console.WriteLine("Citizen Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
                 Console.WriteLine(robbers.Count);
                 Console.WriteLine(persons.Count);
+                //Prison metods 
                 prison.ListPrisoners();                
-                prison.StarPrison();
+                prison.StartPrison();
+
+                //thread sleep implement for auto updates
                 if (city[26, 0] != null || city[27, 0] != null)
                 {
                     Thread.Sleep(2000);
@@ -115,12 +114,9 @@ namespace TjuvOchPolisTest3
                     Thread.Sleep(500);
                 }
                 Console.Clear();
-                
+                //metod to clear array
                 helper.ClearArray(city);
-
-
-            }
-            
+            }            
         }
 
         public static void List()
