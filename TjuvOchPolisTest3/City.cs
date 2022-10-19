@@ -62,7 +62,7 @@ namespace TjuvOchPolisTest3
                         {
                             for(int j = 0; j < robbers.Count; j++)
                             {
-                                if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
+                                if ((robbers[j].PlacementX == (((Police)persons[i]).PlacementX) && (robbers[j].PlacementY == ((Police)persons[i]).PlacementY)))
                                 {
                                     if (robbers[j].Thief == true)
                                     {
