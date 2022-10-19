@@ -63,26 +63,19 @@ namespace TjuvOchPolisTest3
         public List<string> Loot { get; set; }
         public bool Thief { get; set; }
 
-        //public bool InPrison { get; set; }
+        public bool InPrison { get; set; }
 
-        //public DateTime TimeOfCapture { get; set; }
+        public DateTime TimeOfCapture { get; set; }
 
-        //public double TimeInPreison { get; set; }
-        public Robber(bool inPresion , DateTime timeOfCapture, double timeInPersion) : base()
-        {
-            Name = "R";
-            Thief = false;
-            //InPrison = inPresion;
-            //TimeOfCapture = timeOfCapture;
-            //TimeInPreison = timeInPersion;
-            Loot = new List<string>();
-        }
+        public double TimeInPrison { get; set; }
+        
 
         public Robber()
         {
             Name = "R";
             Thief = false;
             Loot = new List<string>();
+            InPrison = false;
         }
     }
 
