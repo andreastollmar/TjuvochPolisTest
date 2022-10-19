@@ -33,7 +33,7 @@ namespace TjuvOchPolisTest3
                     {
                         city[persons[i].PlacementX, persons[i].PlacementY] = persons[i].Name;
                     }
-                    if (persons[i] is Robber)
+                    if (persons[i] is Robber && (((Robber)persons[i]).InPrison) == false)
                     {
                         if (city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] == "C")
                         {
@@ -60,11 +60,11 @@ namespace TjuvOchPolisTest3
                     }
                     if (persons[i] is Police)
                     {
-                        if (city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] == "R")
+                        if (city[persons[i].PlacementX, persons[i].PlacementY] == "R")
                         {
                             for(int j = 0; j < robbers.Count; j++)
                             {
-                                if ((robbers[j].PlacementX == (((Police)persons[i]).PlacementX) && (robbers[j].PlacementY == ((Police)persons[i]).PlacementY)))
+                                if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
                                 {
                                     if (robbers[j].Thief == true)
                                     {
@@ -78,6 +78,7 @@ namespace TjuvOchPolisTest3
                                         robbers[j].PlacementY = rnd.Next(1, 11);
                                         robbers[j].PlacementX = rnd.Next(1, 11);
                                         prison.prisoners.Add(robbers[j]);
+                                        robbers.Remove(robbers[j]);
                                         persons.Remove(robbers[j]);
                                     }
 
@@ -101,6 +102,8 @@ namespace TjuvOchPolisTest3
                 
                 Console.WriteLine("Citizen Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
+                Console.WriteLine(robbers.Count);
+                Console.WriteLine(persons.Count);
                 prison.ListPrisoners();                
                 prison.StarPrison();
                 if (city[26, 0] != null || city[27, 0] != null)
@@ -122,7 +125,7 @@ namespace TjuvOchPolisTest3
 
         public static void List()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 30; i++)
             {
                 Police police = new Police();
                 polices.Add(police);
