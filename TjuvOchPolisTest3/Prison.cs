@@ -27,6 +27,7 @@ namespace TjuvOchPolisTest3
             foreach (Person prisoner in prisoners)
             {
                 prison[prisoner.PlacementX, prisoner.PlacementY] = prisoner.Name;
+                prisoner.Movement();
             }
 
             //code to print the prison out on the terminal window

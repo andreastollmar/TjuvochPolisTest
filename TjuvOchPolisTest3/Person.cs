@@ -21,6 +21,7 @@ namespace TjuvOchPolisTest3
             MovementX = rnd.Next(-1, 2);
             PlacementY = rnd.Next(0, 99);
             PlacementX = rnd.Next(0, 24);
+            Name = "";
         }
 
         public void Movement()
@@ -29,7 +30,7 @@ namespace TjuvOchPolisTest3
             PlacementY = MovementCheckY();
         }        
         
-        public int MovementCheckX()
+        public virtual int MovementCheckX()
         {
             int placementX = PlacementX += MovementX;
             if (placementX < 0)
@@ -42,7 +43,7 @@ namespace TjuvOchPolisTest3
             }
             return placementX;
         }
-        public int MovementCheckY()
+        public virtual int MovementCheckY()
         {
             int placementY = PlacementY += MovementY;
             if (placementY < 0)
@@ -68,7 +69,68 @@ namespace TjuvOchPolisTest3
         public DateTime TimeOfCapture { get; set; }
 
         public double TimeInPrison { get; set; }
-        
+
+        public override int MovementCheckX()
+        {
+            int placementX = PlacementX;
+            if (InPrison)
+            {
+                placementX = PlacementX += MovementX;
+                if (placementX < 1)
+                {
+                    placementX = 10;
+                }
+                else if (placementX > 10)
+                {
+                    placementX = 1;
+                }
+                return placementX;
+            }
+            else
+            {
+                placementX = PlacementX += MovementX;
+                if (placementX < 0)
+                {
+                    placementX = 24;
+                }
+                else if (placementX > 24)
+                {
+                    placementX = 0;
+                }
+                return placementX;
+            }
+            
+        }
+        public override int MovementCheckY()
+        {
+            int placementY = PlacementY; 
+            if(InPrison)
+            {
+                placementY = PlacementY += MovementY;
+                if (placementY < 1)
+                {
+                    placementY = 10;
+                }
+                else if (placementY > 10)
+                {
+                    placementY = 1;
+                }
+            return placementY;
+            }
+            else
+            {
+                placementY = PlacementY += MovementY;
+                if (placementY < 0)
+                {
+                    placementY = 99;
+                }
+                else if (placementY > 99)
+                {
+                    placementY = 0;
+                }
+                return placementY;
+            }
+        }
 
         public Robber()
         {
