@@ -16,18 +16,20 @@ namespace TjuvOchPolisTest3
         public void ListPrisoners()
         {
             Console.WriteLine("==============================================\n");
-            Console.WriteLine(prisoners.Count);
+            Console.WriteLine("robbers in prison: " + prisoners.Count);
+            Console.WriteLine();
 
         }
 
         public void StarPrison()
         {
+            //code to add all prisoners to the prison matris
             foreach (Person prisoner in prisoners)
             {
                 prison[prisoner.PlacementX, prisoner.PlacementY] = prisoner.Name;
             }
 
-
+            //code to print the prison out on the terminal window
             for(int i = 0; i < prison.GetLength(0); i++)
             {
                 for(int j = 0; j < prison.GetLength(1); j++)
