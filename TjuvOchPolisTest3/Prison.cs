@@ -10,7 +10,7 @@ namespace TjuvOchPolisTest3
     internal class Prison
     {
         public List<Person> prisoners = new List<Person>();
-        public string[,] prison = new string[10, 10];
+        public string[,] prison = new string[11, 11];
         
 
         public void ListPrisoners()
@@ -22,17 +22,31 @@ namespace TjuvOchPolisTest3
 
         public void StarPrison()
         {
+            foreach (Person prisoner in prisoners)
+            {
+                prison[prisoner.PlacementX, prisoner.PlacementY] = prisoner.Name;
+            }
+
+
             for(int i = 0; i < prison.GetLength(0); i++)
             {
                 for(int j = 0; j < prison.GetLength(1); j++)
                 {
-                    if(prison[i,j] != null)
+                    if (i == 0 || i == 10)
                     {
-                        Console.Write(prison[i,j]);
+                        Console.Write("=");
+                    }
+                    else if(j == 0 || j == 10)
+                    {
+                        Console.Write("|");
+                    }
+                    else if (prison[i, j] == null)
+                    {
+                        Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write(prison[i, j]);
                     }
 
                 }

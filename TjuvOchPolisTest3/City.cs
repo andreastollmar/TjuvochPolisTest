@@ -62,7 +62,7 @@ namespace TjuvOchPolisTest3
                         {
                             for(int j = 0; j < robbers.Count; j++)
                             {
-                                if (robbers[j].PlacementX == (((Police)persons[i]).PlacementX) && robbers[j].PlacementY == (((Police)persons[i]).PlacementY))
+                                if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
                                 {
                                     if (robbers[j].Thief == true)
                                     {
@@ -71,6 +71,9 @@ namespace TjuvOchPolisTest3
                                         city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "[x]";
                                         robbers[j].InPrison = true;
                                         Console.WriteLine("Thief Was Arrested");
+                                        Random rnd = new Random();
+                                        robbers[j].PlacementY = rnd.Next(1, 11);
+                                        robbers[j].PlacementX = rnd.Next(1, 11);
                                         prison.prisoners.Add(robbers[j]);
                                         persons.Remove(robbers[j]);
                                     }
@@ -148,6 +151,8 @@ namespace TjuvOchPolisTest3
                 Console.WriteLine("Citizen Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
                 prison.ListPrisoners();
+                Console.WriteLine();
+                prison.StarPrison();
                 Console.ReadKey();
                 Console.Clear();
                 for (int i = 0; i < city.GetLength(0); i++)
