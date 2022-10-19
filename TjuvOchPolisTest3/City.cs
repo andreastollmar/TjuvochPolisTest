@@ -14,6 +14,7 @@ namespace TjuvOchPolisTest3
         public static List<Police> polices = new List<Police>();
         Stuff stuff = new Stuff();
         Person person = new Person();
+        Prison prison = new Prison();
         public static List<Person> persons = new List<Person>();
 
 
@@ -23,28 +24,28 @@ namespace TjuvOchPolisTest3
 
             while (true)
             {
-                foreach (Person persons in persons)
+                foreach (Person people in persons)
                 {
-                    persons.Movement();
+                    people.Movement();
 
-                    if (persons is Citizen)
+                    if (people is Citizen)
                     {
-                        city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                        city[people.PlacementX, people.PlacementY] = people.Name;
                     }
-                    if (persons is Robber)
+                    if (people is Robber)
                     {
-                        if (city[(((Robber)persons).PlacementX), (((Robber)persons).PlacementY)] == "C")
+                        if (city[(((Robber)people).PlacementX), (((Robber)people).PlacementY)] == "C")
                         {
                             foreach (Citizen citizen in citizens)
                             {
-                                if (citizen.PlacementX == (((Robber)persons).PlacementX) && citizen.PlacementY == (((Robber)persons).PlacementY))
+                                if (citizen.PlacementX == (((Robber)people).PlacementX) && citizen.PlacementY == (((Robber)people).PlacementY))
                                 {
-                                    stuff.StealItem(citizen.Belongings, (((Robber)persons).Loot));
-                                    (((Robber)persons).Thief) = true;  
+                                    stuff.StealItem(citizen.Belongings, (((Robber)people).Loot));
+                                    (((Robber)people).Thief) = true;  
                                 }
                             }
 
-                            city[(((Robber)persons).PlacementX), (((Robber)persons).PlacementY)] = "[y]";
+                            city[(((Robber)people).PlacementX), (((Robber)people).PlacementY)] = "[y]";
 
 
                             Console.WriteLine("Citizen was robbed!");
@@ -53,30 +54,32 @@ namespace TjuvOchPolisTest3
                         }
                         else
                         {
-                            city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                            city[people.PlacementX, people.PlacementY] = people.Name;
                         }
 
                        
                     }
-                    if (persons is Police)
+                    if (people is Police)
                     {
-                        if (city[(((Police)persons).PlacementX), (((Police)persons).PlacementY)] == "R")
+                        if (city[(((Police)people).PlacementX), (((Police)people).PlacementY)] == "R")
                         {
                             foreach (Robber robber in robbers)
                             {
-                                if (robber.PlacementX == (((Police)persons).PlacementX) && robber.PlacementY == (((Police)persons).PlacementY))
+                                if (robber.PlacementX == (((Police)people).PlacementX) && robber.PlacementY == (((Police)people).PlacementY))
                                 {
                                     if (robber.Thief == true)
                                     {
-                                        stuff.TakeAllItems(robber.Loot, (((Police)persons).StolenGoods));
+                                        stuff.TakeAllItems(robber.Loot, (((Police)people).StolenGoods));
 
-                                        city[(((Police)persons).PlacementX), (((Police)persons).PlacementY)] = "[x]";
-
+                                        city[(((Police)people).PlacementX), (((Police)people).PlacementY)] = "[x]";
+                                        robber.InPrison = true;
                                         Console.WriteLine("Thief Was Arrested");
+                                        prison.prisoners.Add(robber);
+                                        //robbers.Remove(robber);
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Polis bumped in to thief with no possesions");
+                                        Console.WriteLine("Polis bumped in to thief with no stolen gods");
                                     }
                                     
                                 }
@@ -86,7 +89,7 @@ namespace TjuvOchPolisTest3
                         }
                         else
                         {
-                            city[persons.PlacementX, persons.PlacementY] = persons.Name;
+                            city[people.PlacementX, people.PlacementY] = people.Name;
                         }
                     }
 
@@ -147,6 +150,7 @@ namespace TjuvOchPolisTest3
                 //}
                 Console.WriteLine("Citizen Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
+                prison.ListPrisoners();
                 Console.ReadKey();
                 Console.Clear();
                 for (int i = 0; i < city.GetLength(0); i++)
