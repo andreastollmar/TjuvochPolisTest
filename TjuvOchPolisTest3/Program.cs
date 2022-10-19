@@ -31,40 +31,6 @@ namespace TjuvOchPolisTest3
         //    return (DateTime.Now- robber.TimeOfCapture).TotalSeconds;
         //}
 
-        //private static string PrintPrison(List<Robber> prison)
-        //{
-        //    string r = "";
-        //    bool freedom = false;
-        //    bool robbery = false;
-        //    bool capture = false;
-
-        //    foreach (Robber robber in prison)
-        //    {
-        //        r += $"Tjuven har hamnat i fänglse{Math.Round(GetPrisonTime(robber)) } sekounder \n ";
-        //    }
-        //    return r;
-        //    foreach (Robber robber in prison)
-        //    {
-        //        if (GetPrisonTime(robber) >= 40)
-        //        {
-        //            Console.WriteLine("Tjuven lämnade fänglse");
-        //            freedom = true;
-        //        }
-        //    }
-        //    while (freedom)
-        //    {
-        //        freedom = false;
-        //        foreach (Robber robber in prison)
-        //        {
-        //            if (GetPrisonTime(robber) >= 40)
-        //            {
-        //                SendToFreedom(robber, prison);
-        //                freedom = true;
-        //                break;
-        //            }
-        //        }
-        //    }
-
-        //}
+ 
     }
 }
