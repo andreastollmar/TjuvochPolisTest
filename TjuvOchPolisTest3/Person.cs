@@ -78,9 +78,9 @@ namespace TjuvOchPolisTest3
                 placementX = PlacementX += MovementX;
                 if (placementX < 1)
                 {
-                    placementX = 10;
+                    placementX = 9;
                 }
-                else if (placementX > 10)
+                else if (placementX > 9)
                 {
                     placementX = 1;
                 }
@@ -109,9 +109,9 @@ namespace TjuvOchPolisTest3
                 placementY = PlacementY += MovementY;
                 if (placementY < 1)
                 {
-                    placementY = 10;
+                    placementY = 9;
                 }
-                else if (placementY > 10)
+                else if (placementY > 9)
                 {
                     placementY = 1;
                 }

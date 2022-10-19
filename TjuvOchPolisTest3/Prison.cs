@@ -55,6 +55,14 @@ namespace TjuvOchPolisTest3
                 }
                 Console.WriteLine();
             }
+            for (int i = 0; i < prison.GetLength(0); i++)
+            {
+                for (int j = 0; j < prison.GetLength(1); j++)
+                {
+                    prison[i, j] = " ";
+                }
+            }
+
         }
 
 
