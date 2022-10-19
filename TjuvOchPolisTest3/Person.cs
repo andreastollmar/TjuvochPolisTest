@@ -77,6 +77,13 @@ namespace TjuvOchPolisTest3
             //TimeInPreison = timeInPersion;
             Loot = new List<string>();
         }
+
+        public Robber()
+        {
+            Name = "R";
+            Thief = false;
+            Loot = new List<string>();
+        }
     }
 
     internal class Citizen : Person
