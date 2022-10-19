@@ -8,7 +8,7 @@ namespace TjuvOchPolisTest3
 {
     internal class City
     {
-        public static string[,] city = new string[25, 100];
+        public static string[,] city = new string[28, 100];
         public static List<Robber> robbers = new List<Robber>();
         public static List<Citizen> citizens = new List<Citizen>();
         public static List<Police> polices = new List<Police>();
@@ -48,8 +48,8 @@ namespace TjuvOchPolisTest3
 
                             city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "[y]";
 
-                            Console.WriteLine("Citizen was robbed!");
-                            Thread.Sleep(2000);
+                            city[26, 0] = "Citizen was robbed!";
+                            
                         }
                         else
                         {
@@ -72,8 +72,7 @@ namespace TjuvOchPolisTest3
 
                                         city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "[x]";
                                         robbers[j].InPrison = true;
-                                        Console.WriteLine("Thief Was Arrested");
-                                        Thread.Sleep(2000);
+                                        city[27, 0] = "Thief was arrested";
 
                                         Random rnd = new Random();
                                         robbers[j].PlacementY = rnd.Next(1, 11);
@@ -81,11 +80,7 @@ namespace TjuvOchPolisTest3
                                         prison.prisoners.Add(robbers[j]);
                                         persons.Remove(robbers[j]);
                                     }
-                                    else
-                                    {
-                                        Console.WriteLine("Polis bumped in to thief with no stolen gods");
 
-                                    }
                                     
                                 }
                             }                
@@ -108,7 +103,14 @@ namespace TjuvOchPolisTest3
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
                 prison.ListPrisoners();                
                 prison.StarPrison();
-                Thread.Sleep(500);
+                if (city[26, 0] != null || city[27, 0] != null)
+                {
+                    Thread.Sleep(2000);
+                }
+                else
+                {
+                    Thread.Sleep(500);
+                }
                 Console.Clear();
                 
                 helper.ClearArray(city);

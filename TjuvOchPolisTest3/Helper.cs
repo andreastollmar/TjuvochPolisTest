@@ -34,7 +34,7 @@ namespace TjuvOchPolisTest3
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    array[i, j] = " ";
+                    array[i, j] = null;
                 }
             }
         }
