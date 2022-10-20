@@ -12,6 +12,7 @@ namespace TjuvOchPolisTest3
         public List<Person> prisoners = new List<Person>();
         public string[,] prison = new string[11, 11];
         Helper helper = new Helper();
+        Robber robber = new Robber();
         
 
         public void ListPrisoners()
@@ -27,7 +28,8 @@ namespace TjuvOchPolisTest3
             //code to add all prisoners to the prison matris
             foreach (Person prisoner in prisoners)
             {
-                prison[prisoner.PlacementX, prisoner.PlacementY] = prisoner.Name;
+                prison[prisoner.PlacementX, prisoner.PlacementY] = prisoner.Name;                
+                    
                 prisoner.Movement();
             }
 

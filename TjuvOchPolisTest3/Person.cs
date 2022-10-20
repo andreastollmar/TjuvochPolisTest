@@ -64,7 +64,8 @@ namespace TjuvOchPolisTest3
         public List<string> Loot { get; set; }
         public bool Thief { get; set; }
 
-        public bool InPrison { get; set; }
+        public bool InPrison { get; set; }        
+        
 
         public override int MovementCheckX()
         {
