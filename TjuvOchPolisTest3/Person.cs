@@ -19,8 +19,8 @@ namespace TjuvOchPolisTest3
             Random rnd = new Random();            
             MovementY = rnd.Next(-1, 2);
             MovementX = rnd.Next(-1, 2);
-            PlacementY = rnd.Next(0, 99);
-            PlacementX = rnd.Next(0, 24);
+            PlacementY = rnd.Next(1, 101);
+            PlacementX = rnd.Next(1, 25);
             Name = "";
         }
 
@@ -33,26 +33,26 @@ namespace TjuvOchPolisTest3
         public virtual int MovementCheckX()
         {
             int placementX = PlacementX += MovementX;
-            if (placementX < 0)
+            if (placementX < 1)
             {
-                placementX = 24;
+                placementX = 25;
             }
-            else if (placementX > 24)
+            else if (placementX > 25)
             {
-                placementX = 0;
+                placementX = 1;
             }
             return placementX;
         }
         public virtual int MovementCheckY()
         {
             int placementY = PlacementY += MovementY;
-            if (placementY < 0)
+            if (placementY < 1)
             {
-                placementY = 99;
+                placementY = 100;
             }
-            else if (placementY > 99)
+            else if (placementY > 100)
             {
-                placementY = 0;
+                placementY = 1;
             }
             return placementY;
         }
@@ -89,13 +89,13 @@ namespace TjuvOchPolisTest3
             else
             {
                 placementX = PlacementX += MovementX;
-                if (placementX < 0)
+                if (placementX < 1)
                 {
-                    placementX = 24;
+                    placementX = 25;
                 }
-                else if (placementX > 24)
+                else if (placementX > 25)
                 {
-                    placementX = 0;
+                    placementX = 1;
                 }
                 return placementX;
             }
@@ -120,13 +120,13 @@ namespace TjuvOchPolisTest3
             else
             {
                 placementY = PlacementY += MovementY;
-                if (placementY < 0)
+                if (placementY < 1)
                 {
-                    placementY = 99;
+                    placementY = 100;
                 }
-                else if (placementY > 99)
+                else if (placementY > 100)
                 {
-                    placementY = 0;
+                    placementY = 1;
                 }
                 return placementY;
             }

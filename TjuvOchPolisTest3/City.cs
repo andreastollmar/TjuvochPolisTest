@@ -8,7 +8,7 @@ namespace TjuvOchPolisTest3
 {
     internal class City
     {
-        public static string[,] city = new string[28, 100];
+        public static string[,] city = new string[29, 101];
         public static List<Robber> robbers = new List<Robber>();
         public static List<Citizen> citizens = new List<Citizen>();
         public static List<Police> polices = new List<Police>();
@@ -21,11 +21,13 @@ namespace TjuvOchPolisTest3
 
         public void Start()
         {
+           
             List();
             //Long metod to print members into matris city and handle collisions
             while (true)
             {
-                for(int i = 0; i < persons.Count; i++)
+               
+                for (int i = 0; i < persons.Count; i++)
                 {
                     persons[i].Movement();
 
@@ -46,9 +48,9 @@ namespace TjuvOchPolisTest3
                                 }
                             }
 
-                            city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "[y]";
+                            city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "O";
 
-                            city[26, 0] = "Citizen was robbed!";
+                            city[27, 0] = "Citizen was robbed!";
                             
                         }
                         else
@@ -70,9 +72,9 @@ namespace TjuvOchPolisTest3
                                     {
                                         stuff.TakeAllItems(robbers[j].Loot, (((Police)persons[i]).StolenGoods));
 
-                                        city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "[x]";
+                                        city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "*";
                                         robbers[j].InPrison = true;
-                                        city[27, 0] = "Thief was arrested";
+                                        city[28, 0] = "Thief was arrested";
 
                                         Random rnd = new Random();
                                         robbers[j].PlacementY = rnd.Next(1, 11);
@@ -105,7 +107,7 @@ namespace TjuvOchPolisTest3
                 prison.StartPrison();
 
                 //thread sleep implement for auto updates
-                if (city[26, 0] != null || city[27, 0] != null)
+                if (city[27, 0] != null || city[28, 0] != null)
                 {
                     Thread.Sleep(2000);
                 }
