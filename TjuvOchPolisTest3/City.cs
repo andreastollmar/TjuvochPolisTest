@@ -66,7 +66,11 @@ namespace TjuvOchPolisTest3
                         {
                             for(int j = 0; j < robbers.Count; j++)
                             {
-                                if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
+                                if (j >= robbers.Count)
+                                {
+                                    break;
+                                }
+                                else if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
                                 {
                                     if (robbers[j].Thief == true)
                                     {
@@ -100,9 +104,7 @@ namespace TjuvOchPolisTest3
 
                 //Printing data in bottom of matris
                 Console.WriteLine("Citizens Robbed: " + stuff.robbed);
-                Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
-                Console.WriteLine(robbers.Count);
-                Console.WriteLine(persons.Count);
+                Console.WriteLine("Thiefs Arrested: " + stuff.arrested);                
                 //Prison metods                
                 prison.ListPrisoners();                
                 prison.StartPrison();
@@ -121,7 +123,7 @@ namespace TjuvOchPolisTest3
                 helper.ClearArray(city);
             }            
         }
-
+        //metod to creat the lists of people for the city matris
         public static void List()
         {
             for (int i = 0; i < 30; i++)
