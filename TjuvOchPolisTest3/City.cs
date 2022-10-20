@@ -58,7 +58,7 @@ namespace TjuvOchPolisTest3
 
                        
                     }
-                    if (persons[i] is Police)
+                    if (persons[i] is Police && persons[i] != null)
                     {
                         if (city[persons[i].PlacementX, persons[i].PlacementY] == "R")
                         {
@@ -80,6 +80,7 @@ namespace TjuvOchPolisTest3
                                         prison.prisoners.Add(robbers[j]);
                                         robbers.Remove(robbers[j]);
                                         persons.Remove(robbers[j]);
+                                        //break;
                                     }                                   
                                 }
                             }                           
@@ -96,11 +97,11 @@ namespace TjuvOchPolisTest3
                 
 
                 //Printing data in bottom of matris
-                Console.WriteLine("Citizen Robbed: " + stuff.robbed);
+                Console.WriteLine("Citizens Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);
                 Console.WriteLine(robbers.Count);
                 Console.WriteLine(persons.Count);
-                //Prison metods 
+                //Prison metods                
                 prison.ListPrisoners();                
                 prison.StartPrison();
 
