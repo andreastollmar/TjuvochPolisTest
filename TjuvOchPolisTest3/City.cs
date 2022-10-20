@@ -12,8 +12,7 @@ namespace TjuvOchPolisTest3
         public static List<Robber> robbers = new List<Robber>();
         public static List<Citizen> citizens = new List<Citizen>();
         public static List<Police> polices = new List<Police>();
-        Stuff stuff = new Stuff();
-        Person person = new Person();
+        Stuff stuff = new Stuff();        
         Prison prison = new Prison();
         public static List<Person> persons = new List<Person>();
         Helper helper = new Helper();
@@ -26,7 +25,7 @@ namespace TjuvOchPolisTest3
             //Long metod to print members into matris city and handle collisions
             while (true)
             {
-               
+                //Checking each Person for subclasses and doing different things depending on subclass
                 for (int i = 0; i < persons.Count; i++)
                 {
                     persons[i].Movement();
@@ -65,12 +64,8 @@ namespace TjuvOchPolisTest3
                         if (city[persons[i].PlacementX, persons[i].PlacementY] == "R")
                         {
                             for(int j = 0; j < robbers.Count; j++)
-                            {
-                                if (j >= robbers.Count)
-                                {
-                                    break;
-                                }
-                                else if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
+                            {                                
+                                if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
                                 {
                                     if (robbers[j].Thief == true)
                                     {
@@ -85,8 +80,7 @@ namespace TjuvOchPolisTest3
                                         robbers[j].PlacementX = rnd.Next(1, 11);
                                         prison.prisoners.Add(robbers[j]);
                                         robbers.Remove(robbers[j]);
-                                        persons.Remove(robbers[j]);
-                                        //break;
+                                        //persons.Remove((((Robber)persons)[i]));                                        
                                     }                                   
                                 }
                             }                           
@@ -100,9 +94,11 @@ namespace TjuvOchPolisTest3
 
                 //Method to print array               
                 helper.PrintArray(city);
-                
+
 
                 //Printing data in bottom of matris
+                Console.WriteLine(robbers.Count);
+                Console.WriteLine(persons.Count);
                 Console.WriteLine("Citizens Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);                
                 //Prison metods                
