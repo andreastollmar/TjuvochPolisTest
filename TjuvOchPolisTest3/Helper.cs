@@ -14,7 +14,7 @@ namespace TjuvOchPolisTest3
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
-                {
+                { //code to print the city out on the terminal window
                     if (i == 0 || i == 25)
                     {
                         Console.Write("=");
@@ -33,7 +33,7 @@ namespace TjuvOchPolisTest3
                     }
                     else
                     {
-
+                        // Added Colors for the persones
                         if (array[i, j] == "P")
                         {
                             Console.ForegroundColor = ConsoleColor.Blue;

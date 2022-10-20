@@ -14,10 +14,10 @@ namespace TjuvOchPolisTest3
         Helper helper = new Helper();
         
 
-        public void ListPrisoners()
+        public void ListPrisoners() //Method for the prisoners
         {
             Console.WriteLine("==============================================\n");
-            Console.WriteLine("Robbers in prison: " + prisoners.Count);
+            Console.WriteLine("Robbers in prison: " + prisoners.Count); //number of arrested
             Console.WriteLine();
 
         }
