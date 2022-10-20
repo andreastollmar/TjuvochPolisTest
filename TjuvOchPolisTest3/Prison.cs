@@ -17,7 +17,7 @@ namespace TjuvOchPolisTest3
         public void ListPrisoners()
         {
             Console.WriteLine("==============================================\n");
-            Console.WriteLine("robbers in prison: " + prisoners.Count);
+            Console.WriteLine("Robbers in prison: " + prisoners.Count);
             Console.WriteLine();
 
         }
