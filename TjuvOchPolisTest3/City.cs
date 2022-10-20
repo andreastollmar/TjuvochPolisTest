@@ -48,9 +48,9 @@ namespace TjuvOchPolisTest3
                                 }
                             }
 
-                            city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "O";
+                            city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "#";
 
-                            city[27, 0] = "Citizen was robbed!";
+                            city[27, 1] = "Citizen was robbed!";
                             
                         }
                         else
@@ -74,7 +74,7 @@ namespace TjuvOchPolisTest3
 
                                         city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "*";
                                         robbers[j].InPrison = true;
-                                        city[28, 0] = "Thief was arrested";
+                                        city[28, 1] = "Thief was arrested";
 
                                         Random rnd = new Random();
                                         robbers[j].PlacementY = rnd.Next(1, 11);
@@ -108,7 +108,7 @@ namespace TjuvOchPolisTest3
                 prison.StartPrison();
 
                 //thread sleep implement for auto updates
-                if (city[27, 0] != null || city[28, 0] != null)
+                if (city[27, 1] != null || city[28, 1] != null)
                 {
                     Thread.Sleep(2000);
                 }

@@ -66,10 +66,6 @@ namespace TjuvOchPolisTest3
 
         public bool InPrison { get; set; }
 
-        public DateTime TimeOfCapture { get; set; }
-
-        public double TimeInPrison { get; set; }
-
         public override int MovementCheckX()
         {
             int placementX = PlacementX;

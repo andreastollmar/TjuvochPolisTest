@@ -29,7 +29,35 @@ namespace TjuvOchPolisTest3
                     }
                     else
                     {
-                        Console.Write(array[i, j]);
+
+                        if (array[i, j] == "P")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write(array[i, j]);
+                            Console.ResetColor();
+                        }
+                        else if (array[i, j] == "R")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(array[i, j]);
+                            Console.ResetColor();
+                        }
+                        else if (array[i, j] == "C")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.Write(array[i, j]);
+                            Console.ResetColor();
+                        }
+                        else if (array[i, j] == "*" || array[i, j] == "#")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write(array[i, j]);
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(array[i,j]);
+                        }
                     }
                 }
                 Console.WriteLine();

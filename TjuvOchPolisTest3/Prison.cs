@@ -48,8 +48,15 @@ namespace TjuvOchPolisTest3
                     {
                         Console.Write(" ");
                     }
+                    else if (prison[i, j] == "R")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(prison[i, j]);
+                        Console.ResetColor();
+                    }
                     else
                     {
+
                         Console.Write(prison[i, j]);
                     }
 
