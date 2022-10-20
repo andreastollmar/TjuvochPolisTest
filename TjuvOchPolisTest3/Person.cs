@@ -20,7 +20,7 @@ namespace TjuvOchPolisTest3
             MovementY = rnd.Next(-1, 2);
             MovementX = rnd.Next(-1, 2);
             PlacementY = rnd.Next(1, 101);
-            PlacementX = rnd.Next(1, 25);
+            PlacementX = rnd.Next(1, 24);
             Name = "";
         }
 
@@ -35,9 +35,9 @@ namespace TjuvOchPolisTest3
             int placementX = PlacementX += MovementX;
             if (placementX < 1)
             {
-                placementX = 25;
+                placementX = 24;
             }
-            else if (placementX > 25)
+            else if (placementX > 24)
             {
                 placementX = 1;
             }
@@ -48,9 +48,9 @@ namespace TjuvOchPolisTest3
             int placementY = PlacementY += MovementY;
             if (placementY < 1)
             {
-                placementY = 100;
+                placementY = 99;
             }
-            else if (placementY > 100)
+            else if (placementY > 99)
             {
                 placementY = 1;
             }
@@ -87,9 +87,9 @@ namespace TjuvOchPolisTest3
                 placementX = PlacementX += MovementX;
                 if (placementX < 1)
                 {
-                    placementX = 25;
+                    placementX = 24;
                 }
-                else if (placementX > 25)
+                else if (placementX > 24)
                 {
                     placementX = 1;
                 }
@@ -118,9 +118,9 @@ namespace TjuvOchPolisTest3
                 placementY = PlacementY += MovementY;
                 if (placementY < 1)
                 {
-                    placementY = 100;
+                    placementY = 99;
                 }
-                else if (placementY > 100)
+                else if (placementY > 99)
                 {
                     placementY = 1;
                 }
