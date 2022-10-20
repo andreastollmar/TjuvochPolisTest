@@ -15,11 +15,15 @@ namespace TjuvOchPolisTest3
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if(i == 0 || i == 25 )
+                    if (i == 0 || i == 25)
                     {
                         Console.Write("=");
                     }
-                    else if(j == 0 || j == 100 )
+                    else if (i > 25)
+                    {
+                        Console.Write(array[i, j]);
+                    }
+                    else if (j == 0 || j == 100)
                     {
                         Console.Write("|");
                     }
@@ -56,7 +60,7 @@ namespace TjuvOchPolisTest3
                         }
                         else
                         {
-                            Console.Write(array[i,j]);
+                            Console.Write(array[i, j]);
                         }
                     }
                 }
