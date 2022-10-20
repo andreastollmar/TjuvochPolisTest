@@ -79,8 +79,7 @@ namespace TjuvOchPolisTest3
                                         robbers[j].PlacementY = rnd.Next(1, 11);
                                         robbers[j].PlacementX = rnd.Next(1, 11);
                                         prison.prisoners.Add(robbers[j]);
-                                        robbers.Remove(robbers[j]);
-                                        //persons.Remove((((Robber)persons)[i]));                                        
+                                        robbers.Remove(robbers[j]);                                                                               
                                     }                                   
                                 }
                             }                           
@@ -96,9 +95,7 @@ namespace TjuvOchPolisTest3
                 helper.PrintArray(city);
 
 
-                //Printing data in bottom of matris
-                Console.WriteLine(robbers.Count);
-                Console.WriteLine(persons.Count);
+                //Printing data in bottom of matris                
                 Console.WriteLine("Citizens Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);                
                 //Prison metods                
