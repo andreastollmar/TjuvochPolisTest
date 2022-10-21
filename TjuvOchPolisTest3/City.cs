@@ -95,13 +95,11 @@ namespace TjuvOchPolisTest3
                     }
                 }
 
-                //Method to print array
-
+                //Method to print array                
                 helper.PrintArray(city);
 
 
-                //Printing data in bottom of matris
-                Console.WriteLine(robbers.Count);
+                //Printing data in bottom of matris                
                 Console.WriteLine("Citizens Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);                
                 //Prison metods                
@@ -112,13 +110,14 @@ namespace TjuvOchPolisTest3
                 if (city[27, 1] != null || city[28, 1] != null)
                 {
                     Thread.Sleep(2000);
+                    Console.Clear();
                 }
                 else
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(300);                    
                 }
 
-
+                //Console.Clear();
                 Console.SetCursorPosition(0, 0);
 
                 //metod to clear array

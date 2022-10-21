@@ -57,7 +57,7 @@ namespace TjuvOchPolisTest3
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write(array[i, j]);
                             Console.ResetColor();
-                        }
+                        }                        
                         else
                         {
                             Console.Write(array[i, j]);
