@@ -91,7 +91,8 @@ namespace TjuvOchPolisTest3
                     }
                 }
 
-                //Method to print array               
+                //Method to print array
+
                 helper.PrintArray(city);
 
 
@@ -111,7 +112,10 @@ namespace TjuvOchPolisTest3
                 {
                     Thread.Sleep(500);
                 }
-                Console.Clear();
+
+
+                Console.SetCursorPosition(0, 0);
+
                 //metod to clear array
                 helper.ClearArray(city);
             }            
