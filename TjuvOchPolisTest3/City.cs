@@ -9,6 +9,7 @@ namespace TjuvOchPolisTest3
     internal class City
     {
         public static string[,] city = new string[29, 101];
+        public List<Person> prisonersfreed = new List<Person>();
         public static List<Robber> robbers = new List<Robber>();
         public static List<Citizen> citizens = new List<Citizen>();
         public static List<Police> polices = new List<Police>();
@@ -69,12 +70,13 @@ namespace TjuvOchPolisTest3
                                 {
                                     if (robbers[j].Thief == true)
                                     {
+                                        int prisontime = robbers[j].Loot.Count;
                                         stuff.TakeAllItems(robbers[j].Loot, (((Police)persons[i]).StolenGoods));
 
                                         city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "*";
                                         robbers[j].InPrison = true;
                                         city[28, 1] = "Thief was arrested";
-
+                                        robbers[j].TimeInPrison = 10 + (2 * prisontime);
                                         Random rnd = new Random();
                                         robbers[j].PlacementY = rnd.Next(1, 11);
                                         robbers[j].PlacementX = rnd.Next(1, 11);
@@ -95,7 +97,8 @@ namespace TjuvOchPolisTest3
                 helper.PrintArray(city);
 
 
-                //Printing data in bottom of matris                
+                //Printing data in bottom of matris
+                Console.WriteLine(robbers.Count);
                 Console.WriteLine("Citizens Robbed: " + stuff.robbed);
                 Console.WriteLine("Thiefs Arrested: " + stuff.arrested);                
                 //Prison metods                
@@ -137,6 +140,10 @@ namespace TjuvOchPolisTest3
             persons.AddRange(citizens);
             persons.AddRange(robbers);
             persons.AddRange(polices);
+        }
+        public static void AddPrisonerToList(Robber person)
+        {
+            robbers.Add(person);
         }
     }
 

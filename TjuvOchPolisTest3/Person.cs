@@ -63,7 +63,7 @@ namespace TjuvOchPolisTest3
     {
         public List<string> Loot { get; set; }
         public bool Thief { get; set; }
-
+        public int TimeInPrison { get; set; }
         public bool InPrison { get; set; }        
         
 
@@ -134,7 +134,7 @@ namespace TjuvOchPolisTest3
             Name = "R";
             Thief = false;
             Loot = new List<string>();
-            InPrison = false;
+            InPrison = false;            
         }
     }
 
