@@ -49,6 +49,8 @@ namespace TjuvOchPolisTest3
 
                             city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "#";
 
+
+
                             city[27, 1] = "Citizen was robbed!";
                             
                         }
@@ -110,7 +112,7 @@ namespace TjuvOchPolisTest3
                 }
                 else
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
                 }
 
 
