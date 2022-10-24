@@ -8,8 +8,8 @@ namespace TjuvOchPolisTest3
 {
     internal class City
     {
-        public static string[,] city = new string[29, 101];
-        public List<Person> prisonersfreed = new List<Person>();
+        //Lists of objects and construction of classobjects
+        public static string[,] city = new string[29, 101];        
         public static List<Robber> robbers = new List<Robber>();
         public static List<Citizen> citizens = new List<Citizen>();
         public static List<Police> polices = new List<Police>();
@@ -122,7 +122,7 @@ namespace TjuvOchPolisTest3
                     Thread.Sleep(500);                    
                 }
 
-                //Console.Clear();
+                
                 Console.SetCursorPosition(0, 0);
 
                 //metod to clear array

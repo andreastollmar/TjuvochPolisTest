@@ -33,7 +33,7 @@ namespace TjuvOchPolisTest3
                     }
                     else
                     {
-                        // Added Colors for the persones
+                        // Added Colors for the persons
                         if (array[i, j] == "P")
                         {
                             Console.ForegroundColor = ConsoleColor.Blue;
