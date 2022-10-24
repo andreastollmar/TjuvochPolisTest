@@ -37,21 +37,22 @@ namespace TjuvOchPolisTest3
                     }
                     if (persons[i] is Robber && (((Robber)persons[i]).InPrison) == false)
                     {
+                        //checking if there is a citizen in the spot where robber gonna walk
                         if (city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] == "C")
                         {
+                            //Finding that exact citizen
                             foreach (Citizen citizen in citizens)
                             {
                                 if (citizen.PlacementX == (((Robber)persons[i]).PlacementX) && citizen.PlacementY == (((Robber)persons[i]).PlacementY))
                                 {
+                                    //thief steal a random item and get the bool Thief == true
                                     stuff.StealItem(citizen.Belongings, (((Robber)persons[i]).Loot));
                                     (((Robber)persons[i]).Thief) = true;  
                                 }
                             }
 
                             city[(((Robber)persons[i]).PlacementX), (((Robber)persons[i]).PlacementY)] = "#";
-
-
-
+                            //Hardcoded event into the matris
                             city[27, 1] = "Citizen was robbed!";
                             
                         }
@@ -62,21 +63,25 @@ namespace TjuvOchPolisTest3
 
                        
                     }
-                    if (persons[i] is Police && persons[i] != null)
+                    if (persons[i] is Police)
                     {
+                        //checking if there is a robber in place where Polis is added.
                         if (city[persons[i].PlacementX, persons[i].PlacementY] == "R")
                         {
                             for(int j = 0; j < robbers.Count; j++)
-                            {                                
+                            {   //Finding that exakt robber                          
                                 if ((robbers[j].PlacementX == persons[i].PlacementX) && (robbers[j].PlacementY == persons[i].PlacementY))
                                 {
+                                    //Checking if the robber is a thief
                                     if (robbers[j].Thief == true)
                                     {
                                         int prisontime = robbers[j].Loot.Count;
                                         stuff.TakeAllItems(robbers[j].Loot, (((Police)persons[i]).StolenGoods));
 
                                         city[(((Police)persons[i]).PlacementX), (((Police)persons[i]).PlacementY)] = "*";
+                                        //robber get bool inPrison
                                         robbers[j].InPrison = true;
+                                        //printing out the event on the matris
                                         city[28, 1] = "Thief was arrested";
                                         robbers[j].TimeInPrison = 10 + (2 * prisontime);
                                         Random rnd = new Random();
@@ -114,7 +119,7 @@ namespace TjuvOchPolisTest3
                 }
                 else
                 {
-                    Thread.Sleep(300);                    
+                    Thread.Sleep(500);                    
                 }
 
                 //Console.Clear();
